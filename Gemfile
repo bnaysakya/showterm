@@ -8,6 +8,7 @@ gem 'secure_equals'
 gem 'rails_12factor'
 group :development do
   gem 'sqlite3'
+  gem 'capistrano'
 end
 
 gem 'skylight'
