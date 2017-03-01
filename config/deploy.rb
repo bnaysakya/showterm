@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.7.2"
 
-set :application, 'showterm'
+set :application, "showterm"
 #set :deploy_user,'vagrant'
 
 set :repo_url, "git@github.com:bnaysakya/showterm.git"
@@ -12,7 +12,7 @@ set :chruby_ruby, File.read('.ruby-version').match(/\S*/).to_s # Defaults to: 'd
 
 #set :server_name,"192.168.33.10"
 
-set :deploy_to,"/home/vagrant/project"
+set :deploy_to,"/home/vagrant/project/#{fetch(:application)}"
 
 
 # namespace :deploy do
