@@ -1,8 +1,33 @@
 # config valid only for current version of Capistrano
 lock "3.7.2"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, 'showterm'
+#set :deploy_user,'vagrant'
+
+set :repo_url, "git@github.com:bnaysakya/showterm.git"
+set :keep_releases, 5
+
+#set :server_name,"192.168.33.10"
+
+set :deploy_to,"/home/vagrant/project"
+
+
+# namespace :deploy do
+#   task :start do
+#     run "cd /home/vagrant/project/current; rails s;"
+#   end
+#
+# after 'deploy:finished', 'deploy:start'
+  # task :stop do
+  #   run "kill -s QUIT `cat #{pid_file}`" if File.exists?(pid_file)
+  # end
+  #
+  # task :restart do
+  #   stop
+  #   sleep 2
+  #   start
+  # end
+end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

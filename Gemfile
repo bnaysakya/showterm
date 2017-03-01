@@ -9,6 +9,7 @@ gem 'rails_12factor'
 group :development do
   gem 'sqlite3'
   gem 'capistrano'
+  gem 'capistrano-chruby'
 end
 
 gem 'skylight'
