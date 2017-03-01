@@ -7,6 +7,9 @@ set :application, 'showterm'
 set :repo_url, "git@github.com:bnaysakya/showterm.git"
 set :keep_releases, 5
 
+
+set :chruby_ruby, File.read('.ruby-version').match(/\S*/).to_s # Defaults to: 'default'
+
 #set :server_name,"192.168.33.10"
 
 set :deploy_to,"/home/vagrant/project"
@@ -27,7 +30,7 @@ set :deploy_to,"/home/vagrant/project"
   #   sleep 2
   #   start
   # end
-end
+#end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

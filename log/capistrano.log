@@ -786,3 +786,169 @@ Please make sure you have the correct access rights
   INFO [89dd35da] Running /usr/bin/env echo "Branch master (at d02e693f3b68ca2ec94471f01e5177517fbfb5fc) deployed as release 20170301083612 by binayshakya" >> /home/vagrant/project/revisions.log as vagrant@192.168.33.10
  DEBUG [89dd35da] Command: cd /home/vagrant/project/releases && /usr/bin/env echo "Branch master (at d02e693f3b68ca2ec94471f01e5177517fbfb5fc) deployed as release 20170301083612 by binayshakya" >> /home/vagrant/project/revisions.log
   INFO [89dd35da] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-01 14:41:40 +0545 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6a0b2a34] Running /usr/bin/env mkdir -p /tmp as vagrant@192.168.33.10
+ DEBUG [6a0b2a34] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6a0b2a34] Finished in 6.376 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-showterm-production-binayshakya.sh 0.0%
+  INFO Uploading /tmp/git-ssh-showterm-production-binayshakya.sh 100.0%
+  INFO [b7d14c9a] Running /usr/bin/env chmod 700 /tmp/git-ssh-showterm-production-binayshakya.sh as vagrant@192.168.33.10
+ DEBUG [b7d14c9a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-showterm-production-binayshakya.sh
+  INFO [b7d14c9a] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [6ddc6227] Running /usr/bin/env git ls-remote git@github.com:bnaysakya/showterm.git HEAD as vagrant@192.168.33.10
+ DEBUG [6ddc6227] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git ls-remote git@github.com:bnaysakya/showterm.git HEAD )
+ DEBUG [6ddc6227] 	f7e4d232ad1877b247689a8ee4d5660f6dd90152	HEAD
+  INFO [6ddc6227] Finished in 6.696 seconds with exit status 0 (successful).
+  INFO [587d6976] Running /usr/bin/env mkdir -p /home/vagrant/project/shared /home/vagrant/project/releases as vagrant@192.168.33.10
+ DEBUG [587d6976] Command: /usr/bin/env mkdir -p /home/vagrant/project/shared /home/vagrant/project/releases
+  INFO [587d6976] Finished in 0.136 seconds with exit status 0 (successful).
+ DEBUG [e7bcb88d] Running [ -f /home/vagrant/project/current/REVISION ] as vagrant@192.168.33.10
+ DEBUG [e7bcb88d] Command: [ -f /home/vagrant/project/current/REVISION ]
+ DEBUG [e7bcb88d] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [79c07bda] Running /usr/bin/env cat /home/vagrant/project/current/REVISION 2>/dev/null as vagrant@192.168.33.10
+ DEBUG [79c07bda] Command: /usr/bin/env cat /home/vagrant/project/current/REVISION 2>/dev/null
+ DEBUG [79c07bda] 	d02e693f3b68ca2ec94471f01e5177517fbfb5fc
+ DEBUG [79c07bda] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [eae9a227] Running [ -f /home/vagrant/project/repo/HEAD ] as vagrant@192.168.33.10
+ DEBUG [eae9a227] Command: [ -f /home/vagrant/project/repo/HEAD ]
+ DEBUG [eae9a227] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/vagrant/project/repo
+ DEBUG [5d33060c] Running if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [5d33060c] Command: if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi
+ DEBUG [5d33060c] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [0de66d98] Running /usr/bin/env git remote set-url origin git@github.com:bnaysakya/showterm.git as vagrant@192.168.33.10
+ DEBUG [0de66d98] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git remote set-url origin git@github.com:bnaysakya/showterm.git )
+  INFO [0de66d98] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [9574bae0] Running /usr/bin/env git remote update --prune as vagrant@192.168.33.10
+ DEBUG [9574bae0] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9574bae0] 	Fetching origin
+ DEBUG [9574bae0] 	From github.com:bnaysakya/showterm
+   d02e693..f7e4d23  master     -> master
+  INFO [9574bae0] Finished in 5.728 seconds with exit status 0 (successful).
+ DEBUG [8025a4fb] Running if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [8025a4fb] Command: if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi
+ DEBUG [8025a4fb] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [97aaf6c3] Running /usr/bin/env mkdir -p /home/vagrant/project/releases/20170301085654 as vagrant@192.168.33.10
+ DEBUG [97aaf6c3] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env mkdir -p /home/vagrant/project/releases/20170301085654 )
+  INFO [97aaf6c3] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [dc9245fd] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/vagrant/project/releases/20170301085654 as vagrant@192.168.33.10
+ DEBUG [dc9245fd] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/vagrant/project/releases/20170301085654 )
+  INFO [dc9245fd] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [05ec22c4] Running if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [05ec22c4] Command: if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi
+ DEBUG [05ec22c4] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [9d7d6ebe] Running /usr/bin/env git rev-list --max-count=1 master as vagrant@192.168.33.10
+ DEBUG [9d7d6ebe] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9d7d6ebe] 	f7e4d232ad1877b247689a8ee4d5660f6dd90152
+ DEBUG [9d7d6ebe] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [edde03fd] Running if test ! -d /home/vagrant/project/releases/20170301085654; then echo "Directory does not exist '/home/vagrant/project/releases/20170301085654'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [edde03fd] Command: if test ! -d /home/vagrant/project/releases/20170301085654; then echo "Directory does not exist '/home/vagrant/project/releases/20170301085654'" 1>&2; false; fi
+ DEBUG [edde03fd] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [8a34d453] Running /usr/bin/env echo "f7e4d232ad1877b247689a8ee4d5660f6dd90152" >> REVISION as vagrant@192.168.33.10
+ DEBUG [8a34d453] Command: cd /home/vagrant/project/releases/20170301085654 && /usr/bin/env echo "f7e4d232ad1877b247689a8ee4d5660f6dd90152" >> REVISION
+  INFO [8a34d453] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [623eb733] Running /usr/bin/env ln -s /home/vagrant/project/releases/20170301085654 /home/vagrant/project/releases/current as vagrant@192.168.33.10
+ DEBUG [623eb733] Command: /usr/bin/env ln -s /home/vagrant/project/releases/20170301085654 /home/vagrant/project/releases/current
+  INFO [623eb733] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [caf06604] Running /usr/bin/env mv /home/vagrant/project/releases/current /home/vagrant/project as vagrant@192.168.33.10
+ DEBUG [caf06604] Command: /usr/bin/env mv /home/vagrant/project/releases/current /home/vagrant/project
+  INFO [caf06604] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [70e32731] Running /usr/bin/env ls -x /home/vagrant/project/releases as vagrant@192.168.33.10
+ DEBUG [70e32731] Command: /usr/bin/env ls -x /home/vagrant/project/releases
+ DEBUG [70e32731] 	20170301083135	20170301083316	20170301083445	20170301083541	20170301083612
+20170301085654
+ DEBUG [70e32731] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 192.168.33.10
+  INFO [88b87505] Running /usr/bin/env rm -rf /home/vagrant/project/releases/20170301083135 as vagrant@192.168.33.10
+ DEBUG [88b87505] Command: /usr/bin/env rm -rf /home/vagrant/project/releases/20170301083135
+  INFO [88b87505] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [3d439990] Running if test ! -d /home/vagrant/project/releases; then echo "Directory does not exist '/home/vagrant/project/releases'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [3d439990] Command: if test ! -d /home/vagrant/project/releases; then echo "Directory does not exist '/home/vagrant/project/releases'" 1>&2; false; fi
+ DEBUG [3d439990] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [a3417949] Running /usr/bin/env echo "Branch master (at f7e4d232ad1877b247689a8ee4d5660f6dd90152) deployed as release 20170301085654 by binayshakya" >> /home/vagrant/project/revisions.log as vagrant@192.168.33.10
+ DEBUG [a3417949] Command: cd /home/vagrant/project/releases && /usr/bin/env echo "Branch master (at f7e4d232ad1877b247689a8ee4d5660f6dd90152) deployed as release 20170301085654 by binayshakya" >> /home/vagrant/project/revisions.log
+  INFO [a3417949] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-01 14:42:18 +0545 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5b060366] Running /usr/bin/env mkdir -p /tmp as vagrant@192.168.33.10
+ DEBUG [5b060366] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5b060366] Finished in 2.252 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-showterm-production-binayshakya.sh 0.0%
+  INFO Uploading /tmp/git-ssh-showterm-production-binayshakya.sh 100.0%
+  INFO [666a29d6] Running /usr/bin/env chmod 700 /tmp/git-ssh-showterm-production-binayshakya.sh as vagrant@192.168.33.10
+ DEBUG [666a29d6] Command: /usr/bin/env chmod 700 /tmp/git-ssh-showterm-production-binayshakya.sh
+  INFO [666a29d6] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [43802e1f] Running /usr/bin/env git ls-remote git@github.com:bnaysakya/showterm.git HEAD as vagrant@192.168.33.10
+ DEBUG [43802e1f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git ls-remote git@github.com:bnaysakya/showterm.git HEAD )
+ DEBUG [43802e1f] 	f7e4d232ad1877b247689a8ee4d5660f6dd90152	HEAD
+  INFO [43802e1f] Finished in 5.107 seconds with exit status 0 (successful).
+  INFO [2f216160] Running /usr/bin/env mkdir -p /home/vagrant/project/shared /home/vagrant/project/releases as vagrant@192.168.33.10
+ DEBUG [2f216160] Command: /usr/bin/env mkdir -p /home/vagrant/project/shared /home/vagrant/project/releases
+  INFO [2f216160] Finished in 0.255 seconds with exit status 0 (successful).
+ DEBUG [6014a975] Running [ -f /home/vagrant/project/current/REVISION ] as vagrant@192.168.33.10
+ DEBUG [6014a975] Command: [ -f /home/vagrant/project/current/REVISION ]
+ DEBUG [6014a975] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [d7abdbc3] Running /usr/bin/env cat /home/vagrant/project/current/REVISION 2>/dev/null as vagrant@192.168.33.10
+ DEBUG [d7abdbc3] Command: /usr/bin/env cat /home/vagrant/project/current/REVISION 2>/dev/null
+ DEBUG [d7abdbc3] 	f7e4d232ad1877b247689a8ee4d5660f6dd90152
+ DEBUG [d7abdbc3] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [556bcb44] Running [ -f /home/vagrant/project/repo/HEAD ] as vagrant@192.168.33.10
+ DEBUG [556bcb44] Command: [ -f /home/vagrant/project/repo/HEAD ]
+ DEBUG [556bcb44] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/vagrant/project/repo
+ DEBUG [c384cc27] Running if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [c384cc27] Command: if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi
+ DEBUG [c384cc27] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [0958a58c] Running /usr/bin/env git remote set-url origin git@github.com:bnaysakya/showterm.git as vagrant@192.168.33.10
+ DEBUG [0958a58c] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git remote set-url origin git@github.com:bnaysakya/showterm.git )
+  INFO [0958a58c] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [7a0a4baf] Running /usr/bin/env git remote update --prune as vagrant@192.168.33.10
+ DEBUG [7a0a4baf] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7a0a4baf] 	Fetching origin
+  INFO [7a0a4baf] Finished in 7.007 seconds with exit status 0 (successful).
+ DEBUG [ee1c4f28] Running if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [ee1c4f28] Command: if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi
+ DEBUG [ee1c4f28] Finished in 0.284 seconds with exit status 0 (successful).
+  INFO [57d1932c] Running /usr/bin/env mkdir -p /home/vagrant/project/releases/20170301085727 as vagrant@192.168.33.10
+ DEBUG [57d1932c] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env mkdir -p /home/vagrant/project/releases/20170301085727 )
+  INFO [57d1932c] Finished in 0.330 seconds with exit status 0 (successful).
+  INFO [19d5f663] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/vagrant/project/releases/20170301085727 as vagrant@192.168.33.10
+ DEBUG [19d5f663] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/vagrant/project/releases/20170301085727 )
+  INFO [19d5f663] Finished in 0.986 seconds with exit status 0 (successful).
+ DEBUG [7a73f7f4] Running if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [7a73f7f4] Command: if test ! -d /home/vagrant/project/repo; then echo "Directory does not exist '/home/vagrant/project/repo'" 1>&2; false; fi
+ DEBUG [7a73f7f4] Finished in 0.437 seconds with exit status 0 (successful).
+ DEBUG [b00161cf] Running /usr/bin/env git rev-list --max-count=1 master as vagrant@192.168.33.10
+ DEBUG [b00161cf] Command: cd /home/vagrant/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-showterm-production-binayshakya.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b00161cf] 	f7e4d232ad1877b247689a8ee4d5660f6dd90152
+ DEBUG [b00161cf] Finished in 0.532 seconds with exit status 0 (successful).
+ DEBUG [42339b14] Running if test ! -d /home/vagrant/project/releases/20170301085727; then echo "Directory does not exist '/home/vagrant/project/releases/20170301085727'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [42339b14] Command: if test ! -d /home/vagrant/project/releases/20170301085727; then echo "Directory does not exist '/home/vagrant/project/releases/20170301085727'" 1>&2; false; fi
+ DEBUG [42339b14] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [7b27cdfc] Running /usr/bin/env echo "f7e4d232ad1877b247689a8ee4d5660f6dd90152" >> REVISION as vagrant@192.168.33.10
+ DEBUG [7b27cdfc] Command: cd /home/vagrant/project/releases/20170301085727 && /usr/bin/env echo "f7e4d232ad1877b247689a8ee4d5660f6dd90152" >> REVISION
+  INFO [7b27cdfc] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [ba97dd91] Running /usr/bin/env ln -s /home/vagrant/project/releases/20170301085727 /home/vagrant/project/releases/current as vagrant@192.168.33.10
+ DEBUG [ba97dd91] Command: /usr/bin/env ln -s /home/vagrant/project/releases/20170301085727 /home/vagrant/project/releases/current
+  INFO [ba97dd91] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [d417ac86] Running /usr/bin/env mv /home/vagrant/project/releases/current /home/vagrant/project as vagrant@192.168.33.10
+ DEBUG [d417ac86] Command: /usr/bin/env mv /home/vagrant/project/releases/current /home/vagrant/project
+  INFO [d417ac86] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [d1872c9e] Running /usr/bin/env ls -x /home/vagrant/project/releases as vagrant@192.168.33.10
+ DEBUG [d1872c9e] Command: /usr/bin/env ls -x /home/vagrant/project/releases
+ DEBUG [d1872c9e] 	20170301083316	20170301083445	20170301083541	20170301083612	20170301085654
+20170301085727
+ DEBUG [d1872c9e] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 192.168.33.10
+  INFO [87dc8829] Running /usr/bin/env rm -rf /home/vagrant/project/releases/20170301083316 as vagrant@192.168.33.10
+ DEBUG [87dc8829] Command: /usr/bin/env rm -rf /home/vagrant/project/releases/20170301083316
+  INFO [87dc8829] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [9e991cd1] Running if test ! -d /home/vagrant/project/releases; then echo "Directory does not exist '/home/vagrant/project/releases'" 1>&2; false; fi as vagrant@192.168.33.10
+ DEBUG [9e991cd1] Command: if test ! -d /home/vagrant/project/releases; then echo "Directory does not exist '/home/vagrant/project/releases'" 1>&2; false; fi
+ DEBUG [9e991cd1] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [303c2748] Running /usr/bin/env echo "Branch master (at f7e4d232ad1877b247689a8ee4d5660f6dd90152) deployed as release 20170301085727 by binayshakya" >> /home/vagrant/project/revisions.log as vagrant@192.168.33.10
+ DEBUG [303c2748] Command: cd /home/vagrant/project/releases && /usr/bin/env echo "Branch master (at f7e4d232ad1877b247689a8ee4d5660f6dd90152) deployed as release 20170301085727 by binayshakya" >> /home/vagrant/project/revisions.log
+  INFO [303c2748] Finished in 0.032 seconds with exit status 0 (successful).
