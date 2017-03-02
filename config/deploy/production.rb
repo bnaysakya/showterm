@@ -1,4 +1,4 @@
-server '192.168.33.10', user: 'vagrant'
+server 'localhost', user: 'binayshakya'
 
 # server-based syntax
 # ======================

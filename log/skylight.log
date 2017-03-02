@@ -65,3 +65,7 @@ W, [2017-02-27T18:19:12.226156 #21079]  WARN -- : [SKYLIGHT] [0.4.3] Running Sky
 (To disable this message, set `alert_log_file` in your config.)
 W, [2017-02-28T14:39:20.824219 #12995]  WARN -- : [SKYLIGHT] [0.4.3] Running Skylight in development mode. No data will be reported until you deploy your app.
 (To disable this message, set `alert_log_file` in your config.)
+W, [2017-03-01T15:32:44.995177 #22079]  WARN -- : [SKYLIGHT] [0.4.3] Running Skylight in development mode. No data will be reported until you deploy your app.
+(To disable this message, set `alert_log_file` in your config.)
+W, [2017-03-01T16:12:12.140389 #26732]  WARN -- : [SKYLIGHT] [0.4.3] Running Skylight in development mode. No data will be reported until you deploy your app.
+(To disable this message, set `alert_log_file` in your config.)
